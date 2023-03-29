@@ -33,7 +33,7 @@ async def is_admins(chat_id: int):
 
 @bot.on_message(filters.command("start"))
 async def start(client, message):
-        await message.reply_text("Hi! My name is [LOGIC-AI](https://t.me/logicxupdates). I'm an Artificial Intelligence")
+        await message.reply_text("Hi! My name is [Mamba](https://t.me/MAMBA_KI_DUNIYA). I'm an Artificial Intelligence")
 
 
 @bot.on_message(
@@ -54,9 +54,9 @@ async def chatbotofd(client, message):
     is_Logic = Logic.find_one({"chat_id": message.chat.id})
     if not is_Logic:
         Logic.insert_one({"chat_id": message.chat.id})
-        await message.reply_text(f"LOGIC-AI Disabled!")
+        await message.reply_text(f"MAMBA-AI Disabled!")
     if is_Logic:
-        await message.reply_text(f"LOGIC-AI Is Already Disabled")
+        await message.reply_text(f"MAMBA-AI Is Already Disabled")
     
 
 @bot.on_message(
@@ -76,17 +76,17 @@ async def chatboton(client, message):
             )
     is_Logic = Logic.find_one({"chat_id": message.chat.id})
     if not is_Logic:           
-        await message.reply_text(f"LOGIC-AI Is Already Enabled")
+        await message.reply_text(f"MAMBA-AI Is Already Enabled")
     if is_Logic:
         Logic.delete_one({"chat_id": message.chat.id})
-        await message.reply_text(f"LOGIC-AI Is Enabled!")
+        await message.reply_text(f"MAMBA-AI Is Enabled!")
     
 
 @bot.on_message(
     filters.command("chatbot", prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbot(client, message):
-    await message.reply_text(f"**Usage:**\n/chatbot [on|off] only in groups. \n ✧Join:-@Logicxupdates✧. ")
+    await message.reply_text(f"**Usage:**\n/chatbot [on|off] only in groups. \n ✧Join:-@MAMBA_KI_DUNIYA✧. ")
 
 
 @bot.on_message(
